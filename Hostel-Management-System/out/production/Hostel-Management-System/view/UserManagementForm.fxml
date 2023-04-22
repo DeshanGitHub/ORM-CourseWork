@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="UserManagementFormContext" prefHeight="576.0" prefWidth="844.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UserManagementFormController">
+   <children>
+      <Pane layoutY="-2.0" prefHeight="74.0" prefWidth="849.0" style="-fx-background-color: #1abc9c;">
+         <children>
+            <Text fontSmoothingType="LCD" layoutX="256.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Management" wrappingWidth="343.9404296875">
+               <font>
+                  <Font name="Arial Bold" size="38.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Label fx:id="lblDate" layoutX="8.0" layoutY="14.0" text="2020/06/21" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTime" layoutX="8.0" layoutY="40.0" text="08.34.12" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblUserData" focusTraversable="false" layoutX="117.0" layoutY="288.0" prefHeight="232.0" prefWidth="620.0">
+        <columns>
+          <TableColumn fx:id="colNic" prefWidth="109.0" text="NIC" />
+          <TableColumn fx:id="colName" prefWidth="114.0" text="Name" />
+            <TableColumn fx:id="colUserName" prefWidth="139.0" text="User Name" />
+            <TableColumn fx:id="colPassword" prefWidth="138.0" text="Password" />
+            <TableColumn fx:id="colOption" prefWidth="119.0" text="Option" />
+        </columns>
+      </TableView>
+      <JFXTextField fx:id="txtSearch" labelFloat="true" layoutX="119.0" layoutY="228.0" onKeyReleased="#searchUserOnKeyReleased" prefHeight="27.0" prefWidth="313.0" promptText="S E A R C H">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+         <unFocusColor>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </unFocusColor></JFXTextField>
+      <JFXButton fx:id="btnAddUser" buttonType="RAISED" focusTraversable="false" layoutX="539.0" layoutY="169.0" onAction="#btnAddUserOnAction" prefHeight="33.0" prefWidth="130.0" style="-fx-background-color: #27ae60; -fx-background-radius: 8;" text="Add User" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+         <ripplerFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#370cd3" />
+                  <Stop color="#d01717" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </ripplerFill>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnCancel" buttonType="RAISED" focusTraversable="false" layoutX="697.0" layoutY="169.0" onAction="#btnCancelOnAction" prefHeight="33.0" prefWidth="130.0" style="-fx-background-color: #c0392b; -fx-background-radius: 8;" text="Cancel" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+         <ripplerFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#370cd3" />
+                  <Stop color="#d01717" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </ripplerFill>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXTextField fx:id="txtNic" labelFloat="true" layoutX="27.0" layoutY="120.0" onKeyReleased="#validateFieldsOnKeyReleased" prefHeight="26.0" prefWidth="130.0" promptText="NIC">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+         <unFocusColor>
+            <RadialGradient centerX="0.2078651685393259" centerY="0.5288461538461539" radius="0.5">
+               <stops>
+                  <Stop color="#125fb8" />
+                  <Stop color="#125fb8" offset="0.29595102621418407" />
+                  <Stop color="#12b82d" offset="0.8082706766917291" />
+                  <Stop color="#d01717" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </unFocusColor>
+      </JFXTextField>
+      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="759.0" layoutY="20.0" onAction="#btnGoBackOnAction" style="-fx-background-color: #34495e; -fx-background-radius: 8;" text="Home" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <ripplerFill>
+            <RadialGradient centerX="0.5224719101123596" centerY="0.5288461538461539" radius="0.5">
+               <stops>
+                  <Stop color="#4ebf7b" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </ripplerFill>
+      </JFXButton>
+      <JFXTextField fx:id="txtName" labelFloat="true" layoutX="174.0" layoutY="120.0" onKeyReleased="#validateFieldsOnKeyReleased" prefHeight="26.0" prefWidth="130.0" promptText="Name">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+         <unFocusColor>
+            <RadialGradient centerX="0.2078651685393259" centerY="0.5288461538461539" radius="0.5">
+               <stops>
+                  <Stop color="#125fb8" />
+                  <Stop color="#125fb8" offset="0.29595102621418407" />
+                  <Stop color="#12b82d" offset="0.8082706766917291" />
+                  <Stop color="#d01717" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </unFocusColor>
+      </JFXTextField>
+      <JFXTextField fx:id="txtUserName" labelFloat="true" layoutX="339.0" layoutY="120.0" onKeyReleased="#validateFieldsOnKeyReleased" prefHeight="26.0" prefWidth="130.0" promptText="User Name">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+         <unFocusColor>
+            <RadialGradient centerX="0.2078651685393259" centerY="0.5288461538461539" radius="0.5">
+               <stops>
+                  <Stop color="#125fb8" />
+                  <Stop color="#125fb8" offset="0.29595102621418407" />
+                  <Stop color="#12b82d" offset="0.8082706766917291" />
+                  <Stop color="#d01717" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </unFocusColor>
+      </JFXTextField>
+      <JFXTextField fx:id="txtPassword" labelFloat="true" layoutX="508.0" layoutY="120.0" onKeyReleased="#validateFieldsOnKeyReleased" prefHeight="26.0" prefWidth="130.0" promptText="Password">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+         <unFocusColor>
+            <RadialGradient centerX="0.2078651685393259" centerY="0.5288461538461539" radius="0.5">
+               <stops>
+                  <Stop color="#125fb8" />
+                  <Stop color="#125fb8" offset="0.29595102621418407" />
+                  <Stop color="#12b82d" offset="0.8082706766917291" />
+                  <Stop color="#d01717" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </unFocusColor>
+      </JFXTextField>
+      <JFXTextField fx:id="txtConfirmPassword" labelFloat="true" layoutX="689.0" layoutY="120.0" onKeyReleased="#validateFieldsOnKeyReleased" prefHeight="26.0" prefWidth="130.0" promptText="Confirm Password">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+         <unFocusColor>
+            <RadialGradient centerX="0.2078651685393259" centerY="0.5288461538461539" radius="0.5">
+               <stops>
+                  <Stop color="#125fb8" />
+                  <Stop color="#125fb8" offset="0.29595102621418407" />
+                  <Stop color="#12b82d" offset="0.8082706766917291" />
+                  <Stop color="#d01717" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </unFocusColor>
+      </JFXTextField>
+   </children>
+</AnchorPane>
